@@ -8,16 +8,12 @@ class App extends Component{
     super(props);
     this.state = {
       loading: false,
-      result: {
-        status: true,
-        message: "tanishtanish@babbel.com"
-      }
+      result: null
     };
   }
 
   fetchEmail(data){
     this.setState({loading: true});
-    console.log(data);
 
     fetch(`http://localhost:4000/generate`, {
       method: 'POST',
@@ -31,12 +27,12 @@ class App extends Component{
     .then(res => { 
       this.setState({
         result:{
-          status: true,
-          message: res.email
+          status: res.status,
+          message: res.message
         },
         loading: false
       });
-    }).catch(res => { 
+    }).catch(err => { 
       this.setState({loading: false});
     });
   }

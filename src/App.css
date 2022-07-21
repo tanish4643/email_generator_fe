@@ -100,3 +100,19 @@ input:focus{
 .result_div p{
   margin-bottom: 8vh;
 }
+.icon_back{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 5px 5px 10px 15px;
+  border-bottom-left-radius: 50px;
+}
+.status_img{
+  height: 5vh;
+}
+.success_icon_{
+  content: url('./images/success.png');
+}
+.error_icon{
+  content: url('./images/error.png');
+}
